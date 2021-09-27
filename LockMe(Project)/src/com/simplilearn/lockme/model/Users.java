@@ -32,9 +32,4 @@ public class Users {
 	public String toString() {
 		return "Users [username=" + username + ", password=" + password + "]";
 	}
-
-	
-	
-	
-
 }
