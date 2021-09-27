@@ -63,7 +63,7 @@ public class Authentication {
 				storeCredentials(inpUsername);
 				break;
 			default :
-				System.out.println("Please select 1 Or 2");
+				System.out.println("Please select 1 or 2");
 				break;
 		}
 		lockerInput.close();
@@ -85,7 +85,7 @@ public class Authentication {
 		output.println(users.getUsername());
 		output.println(users.getPassword());
 		
-		System.out.println("User Registration Suscessful !");
+		System.out.println("User Registration Successfull!");
 		output.close();
 		
 	}
@@ -166,7 +166,6 @@ public class Authentication {
 					try {
 						 file = new FileOutputStream(filename);
 					} catch (FileNotFoundException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					
@@ -174,26 +173,22 @@ public class Authentication {
 					try {
 						out = new ObjectOutputStream(file);
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					
 					try {
 						out.writeObject(list);
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					try {
 						out.close();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 					try {
 						file.close();
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 		System.out.println("YOUR CREDENTIALS ARE STORED SAFE AND SECURED!1");
