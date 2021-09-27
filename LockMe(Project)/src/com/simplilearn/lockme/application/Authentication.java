@@ -10,8 +10,8 @@ import java.util.Map;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-import com.simplilearn.lockme.model.UserCredentials;
-import com.simplilearn.lockme.model.Users;
+import com.simplilearn.lockme(phase1).model.UserCredentials;
+import com.simplilearn.lockme(phase1).model.Users;
 
 public class Authentication {
 	//input data
