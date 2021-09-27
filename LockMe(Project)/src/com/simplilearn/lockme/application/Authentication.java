@@ -3,12 +3,12 @@ package com.simplilearn.lockme.application;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 import java.io.FileOutputStream;
 import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Map;
-import java.io.PrintWriter;
-import java.util.Scanner;
 
 import com.simplilearn.lockme.model.UserCredentials;
 import com.simplilearn.lockme.model.Users;
@@ -33,8 +33,10 @@ public class Authentication {
 
 	}
 	public static void signInOptions() {
+		System.out.println("Please select any one of the given options:");
 		System.out.println("1. Registration ");
 		System.out.println("2. Login ");
+		System.out.println("3. Exit");
 		int option = keyboard.nextInt();
 		switch(option) {
 			case 1 : 
@@ -43,8 +45,11 @@ public class Authentication {
 			case 2 :
 				loginUser();
 				break;
+			case 3: 
+				System.out.println("Thanks, Please do visit the page again");
+				break;
 			default :
-				System.out.println("Please select 1 or 2");
+				System.out.println("Please select either 1 or 2");
 				break;
 		}
 		keyboard.close();
@@ -54,6 +59,7 @@ public class Authentication {
 	public static void lockerOptions(String inpUsername) {
 		System.out.println("1. FETCH ALL STORED CREDENTIALS ");
 		System.out.println("2. STORED CREDENTIALS ");
+		System.out.println("3. DELETE ALL CREDENTIALS");
 		int option = keyboard.nextInt();
 		switch(option) {
 			case 1 : 
@@ -62,28 +68,41 @@ public class Authentication {
 			case 2 :
 				storeCredentials(inpUsername);
 				break;
+			case 3:
+				deleteAllCredentials(inpUsername);
+				break;
 			default :
-				System.out.println("Please select 1 or 2");
+				System.out.println("Please select a valid option");
 				break;
 		}
 		lockerInput.close();
 	}
 	
 	public static void registerUser() {
-		System.out.println("----------------------------------------");
+		System.out.println("------------------------------------------");
 		System.out.println("WELCOME TO REGISTRATION PAGE");
-		System.out.println("----------------------------------------");
+		System.out.println("------------------------------------------");
 		
-		System.out.println("Enter Username :");
+		/*System.out.println("Enter your first name :");
+		String firstname = keyboard.next();
+		users.setFirstname(firstname);
+		
+		System.out.println("Enter your last name :");
+		String lastname = keyboard.next();
+		users.setLastname(lastname);*/
+		
+		System.out.println("Enter your Username :");
 		String username = keyboard.next();
 		users.setUsername(username);
 		
-		System.out.println("Enter Password :");
+		System.out.println("Enter your Password :");
 		String password = keyboard.next();
 		users.setPassword(password);
 		
 		output.println(users.getUsername());
 		output.println(users.getPassword());
+		// output.println(users.getFirstname());
+	// 	output.println(users.getLastname()); 
 		
 		System.out.println("User Registration Successfull!");
 		output.close();
@@ -91,7 +110,7 @@ public class Authentication {
 	}
 	public static void loginUser() {
 		System.out.println("------------------------------------------");
-	System.out.println("WELCOME TO LOGIN PAGE");
+		System.out.println("WELCOME TO LOGIN PAGE");
 		System.out.println("------------------------------------------");
 		System.out.println("Enter Username :");
 		String inpUsername = keyboard.next();
@@ -115,17 +134,17 @@ public class Authentication {
 	}
 	
 	public static void welcomeScreen() {
-		System.out.println("--------------------------------------");
+		System.out.println("-----------------------------------------");
 		System.out.println("Welcome To LockMe.com");
 		System.out.println("Your Personal Digital Locker");
-	    System.out.println("------------------------------------------");
+		System.out.println("------------------------------------------");
 		
 	}
 	//store credentails
 	public static void storeCredentials(String loggedInUser) {
-		System.out.println("-----------------------------------------------------");
+		System.out.println("------------------------------------------------------");
 		System.out.println("WELCOME TO DIGITAL LOCKER STORE YOUR CREDENTIALS HERE");
-		System.out.println("-----------------------------------------------------");
+		System.out.println("------------------------------------------------------");
 		
 		userCredentials.setLoggedInUser(loggedInUser);
 		
@@ -191,16 +210,17 @@ public class Authentication {
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
-		System.out.println("YOUR CREDENTIALS ARE STORED SAFE AND SECURED!1");
+		
+		System.out.println("YOUR CREDENTIALS ARE STORED SAFE AND SECURED!");
 		lockerOutput.close();		
 	}
 	
 	//fetch credentials
 	public static void fetchCredentials(String inpUsername) {
-		System.out.println("-----------------------------------------");
+		System.out.println("------------------------------------------");
 		System.out.println("WELCOME TO DIGITAL LOCKER");
-		System.out.println("YOUR CREDENTIALS ARE");
-	        System.out.println("-----------------------------------------");
+		System.out.println("YOUR CREDENTIALS ARE ");
+		System.out.println("--------------------------------------------");
 		System.out.println(inpUsername);
 		
 		
@@ -214,7 +234,6 @@ public class Authentication {
 		}
 		
 	}
-	
 	public static void deleteAllCredentials(String inpUsername) {
 		File myObj = new File(filename); 
 				    if (myObj.delete()) { 
@@ -224,6 +243,7 @@ public class Authentication {
 				      System.out.println("Failed to delete the file");
 				    } 
 		   } 
+	
 	
 	public static void initApp() {
 
