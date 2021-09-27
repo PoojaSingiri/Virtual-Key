@@ -40,7 +40,7 @@ public class Authentication {
 				loginUser();
 				break;
 			default :
-				System.out.println("Please select 1 Or 2");
+				System.out.println("Please select 1 or 2");
 				break;
 		}
 		keyboard.close();
