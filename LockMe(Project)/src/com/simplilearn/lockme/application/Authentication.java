@@ -220,6 +220,16 @@ public class Authentication {
 		
 	}
 	
+	public static void deleteAllCredentials(String inpUsername) {
+		File myObj = new File(filename); 
+				    if (myObj.delete()) { 
+				      System.out.println("Deleted the file: " + myObj.getName());
+				    } 
+				    else {
+				      System.out.println("Failed to delete the file");
+				    } 
+		   } 
+	
 	public static void initApp() {
 
 		File  dbFile = new File("database.txt");
