@@ -14,8 +14,7 @@ public class UserCredentials {
 		this.loggedInUser = loggedInUser;
 		this.username = username;
 		this.password = password;
-	}
-
+		
 	public String getSiteName() {
 		return siteName;
 	}
@@ -31,6 +30,22 @@ public class UserCredentials {
 	public void setLoggedInUser(String loggedInUser) {
 		this.loggedInUser = loggedInUser;
 	}
+
+	/* public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}  */
 
 	public String getUsername() {
 		return username;
@@ -50,17 +65,11 @@ public class UserCredentials {
 
 	@Override
 	public String toString() {
-		return "UserCredentials [siteName=" + siteName + 
-				", loggedInUser=" + loggedInUser + 
-				", username=" + username
-				+ ", password=" + password + "]";
+		return "UserCredentials [siteName=" + siteName + ", loggedInUser=" + loggedInUser + ", firstname=" + firstname
+				+ ", lastname=" + lastname + ", username=" + username + ", password=" + password + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
+
+
+	}
 
 }
