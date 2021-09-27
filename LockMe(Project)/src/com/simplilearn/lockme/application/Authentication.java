@@ -1,4 +1,4 @@
-package com.simplilearn.lockme.application;
+package com.simplilearn.phase-1.lockme.application;
 
 import java.io.File;
 import java.io.FileWriter;
