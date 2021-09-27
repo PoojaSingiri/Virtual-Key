@@ -1,4 +1,4 @@
-package com.simplilearn.lockme.model;
+package com.simplilearn.lockme(phase1).model;
 
 public class Users {
 	
