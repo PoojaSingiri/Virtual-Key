@@ -3,6 +3,10 @@ package com.simplilearn.phase-1.lockme.application;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.FileOutputStream;
+import java.io.FileNotFoundException;
+import java.util.List;
+import java.util.Map;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
@@ -142,7 +146,57 @@ public class Authentication {
 		lockerOutput.println(userCredentials.getUsername());
 		lockerOutput.println(userCredentials.getPassword());
 		
-		System.out.println("YOUR CREDENTIALS ARE STORED AND SECURED!");
+		List<String> List = new ArrayList<String>();
+		Map<String, String> Map = new HashMap<>();
+		
+		List.add(loggedInUser);
+		List.add(siteName);
+		List.add(userID);
+		List.add(password);
+		
+		Map.put("User Name is:", loggedInUser);
+		Map.put("The Website Name is:", siteName);					
+		Map.put("User ID is:", userID);
+		Map.put("Password is:", password);
+		
+		System.out.println(Map);
+		filename = filename.concat(".");
+					filename = filename.concat(siteName);
+					FileOutputStream file = null;
+					try {
+						 file = new FileOutputStream(filename);
+					} catch (FileNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					ObjectOutputStream out = null;
+					try {
+						out = new ObjectOutputStream(file);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					try {
+						out.writeObject(list);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					try {
+						out.close();
+					} catch (IOException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					try {
+						file.close();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+		System.out.println("YOUR CREDENTIALS ARE STORED SAFE AND SECURED!1");
 		lockerOutput.close();		
 	}
 	
