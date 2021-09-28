@@ -14,14 +14,14 @@ import com.simplilearn.lockme.model.UserCredentials;
 import com.simplilearn.lockme.model.Users;
 
 public class Authentication {
-	//input data
+	
 	private static Scanner keyboard;
 	private static Scanner input;
 	private static Scanner lockerInput;
-	//output data 
+	
 	private static PrintWriter output;
 	private static PrintWriter lockerOutput;
-	//model to store data.
+	
 	private static Users users;
 	private static UserCredentials userCredentials;
 	
@@ -216,7 +216,7 @@ public class Authentication {
 		lockerOutput.close();		
 	}
 	
-	//fetch credentials
+	
 	public static void fetchCredentials(String inpUsername) {
 		System.out.println("------------------------------------------");
 		System.out.println("WELCOME TO DIGITAL LOCKER");
@@ -252,16 +252,16 @@ public class Authentication {
 		File  lockerFile = new File("locker-file.txt");
 		
 		try {
-			//read data from db file
+			
 			input = new Scanner(dbFile);
 			
-			//red data from locker file
+			
 			lockerInput = new Scanner(lockerFile);
 			
-			//read data from keyboard
+			
 			keyboard = new Scanner(System.in);
 			
-			//out put 
+			
 			output = new PrintWriter( new FileWriter(dbFile,true));
 			lockerOutput = new PrintWriter( new FileWriter(lockerFile,true));
 			
