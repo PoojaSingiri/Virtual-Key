@@ -141,7 +141,7 @@ public class Authentication {
 		System.out.println("------------------------------------------");
 		
 	}
-	//store credentails
+	
 	public static void storeCredentials(String loggedInUser) {
 		System.out.println("------------------------------------------------------");
 		System.out.println("WELCOME TO DIGITAL LOCKER STORE YOUR CREDENTIALS HERE");
